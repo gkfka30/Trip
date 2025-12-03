@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trip Life - 여행을 디자인하다</title>
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- 폰트 어썸 (아이콘) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- 한글 폰트 (Noto Sans KR) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- jQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/custom.js"></script>
+  </head>
+  <body>
+    <!-- [Header] : 사용자 코드 유지 -->
+    <header>
+      <div>
+        <div class="hamb">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <div class="mainlogo">
+          <a href="#">
+            <!-- 로고 임시 이미지 -->
+            <img
+              src="https://placehold.co/150x40/2c61fe/ffffff?text=Trip+Life"
+              alt="Logo"
+            />
+          </a>
+        </div>
+        <div class="search">
+          <p>여행지, 명소, 호텔 등으로 검색</p>
+          <div>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-mobile-screen-button"></i>
+              <span>앱</span></a
+            >
+          </li>
+          <li><a href="#">숙소 등록</a></li>
+          <li><a href="#">고객 센터</a></li>
+          <li><a href="#">예약 검색</a></li>
+          <li><a href="#">로그인/회원가입</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- [Visual] : 사용자 코드 유지 (배경 이미지 CSS에서 적용) -->
+    <div id="visual">
+      <div class="btn">
+        <div class="prevbt">
+          <a href="#">
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+        </div>
+        <div class="nextbt">
+          <a href="#">
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="titleBox">
+        <div>
+          <h2>
+            여행 지원금으로<br />
+            가볍게 여행가자!
+          </h2>
+          <p>프라이빗 24시 상담 서비스에 여행지원금까지!</p>
+        </div>
+      </div>
+      <div class="right">
+        <a href="#">
+          <span>어디로 떠나세요?</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- =======================
+         [새로 추가된 Content 영역]
+         ======================= -->
+
+    <!-- 1. 휴가 특선 게시 -->
+    <section class="container section-gap">
+      <div class="section-header">
+        <h3><i class="fa-solid fa-flag"></i> 휴가 특선 게시</h3>
+        <p>망설이면 품절! 지금 떠나면 행복한 여행!</p>
+      </div>
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-img">
+            <img
+              src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=2071&auto=format&fit=crop"
+              alt="Turkey"
+            />
+          </div>
+          <div class="card-body">
+            <span class="badge">해외 여행</span>
+            <h4>[BEST 스페셜 | 튀르키예] 일주 9~10일 #열기구</h4>
+            <p>전 일정 특급호텔, 5대 특식 포함, 국내선 탑승</p>
+            <div class="price">1,999,000원 ~</div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-img">
+            <img
+              src="https://image1.onlinetour.co.kr/obms_images/tour_info/VN/2020032715080498CCB312468943F8B28D327B75C8BD27.jpg"
+              alt="Desert"
+            />
+          </div>
+          <div class="card-body">
+            <span class="badge">해외 여행</span>
+            <h4>[나트랑/무이네] 3박 5일 #사막투어 #지프투어</h4>
+            <p>시내 5성급 호텔, 판티엣 사막 지프투어 포함</p>
+            <div class="price">289,000원 ~</div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-img">
+            <img
+              src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1949&auto=format&fit=crop"
+              alt="Resort"
+            />
+          </div>
+          <div class="card-body">
+            <span class="badge">국내 호캉스</span>
+            <h4>[허니문 추천] 럭셔리 풀빌라 & 스파 패키지</h4>
+            <p>프라이빗 인피니티 풀, 조식 및 디너 포함</p>
+            <div class="price">1,530,000원 ~</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 중간 배너 -->
+    <section class="banner-mid">
+      <div class="banner-text">
+        <h3>나만의 시드니 여행!</h3>
+        <p>2024년 12월 02일 | 대한항공 직항 | 시드니 시내 4성급</p>
+      </div>
+    </section>
+
+    <!-- 3. 테마별 여행 -->
+    <section class="container section-gap theme-wrap">
+      <div class="theme-sidebar">
+        <h3>테마별<br />여행 CATION<br />내 스타일은?</h3>
+        <ul>
+          <li class="active"><i class="fa-solid fa-plane"></i> 호캉스+휴식</li>
+          <li><i class="fa-solid fa-umbrella-beach"></i> 액티비티+체험</li>
+          <li><i class="fa-solid fa-camera"></i> 인생샷+관광</li>
+          <li><i class="fa-solid fa-utensils"></i> 맛집 탐방</li>
+        </ul>
+      </div>
+      <div class="theme-grid">
+        <div class="mini-card">
+          <img
+            src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
+            alt="Theme1"
+          />
+          <div class="mini-txt">
+            <h5>감성숙소에서 1박</h5>
+            <p>650,000원~</p>
+          </div>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop"
+            alt="Theme2"
+          />
+          <div class="mini-txt">
+            <h5>힐링 요가 클래스</h5>
+            <p>147,000원~</p>
+          </div>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop"
+            alt="Theme3"
+          />
+          <div class="mini-txt">
+            <h5>제주 스냅 촬영</h5>
+            <p>214,400원~</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 아이콘 메뉴 -->
+    <section class="container section-gap icon-menu">
+      <ul>
+        <li>
+          <a href="#">
+            <div class="icon-circle"><i class="fa-solid fa-plane-up"></i></div>
+            <p>최저가 항공</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-circle"><i class="fa-solid fa-bed"></i></div>
+            <p>감성 숙소</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-circle">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <p>현지 투어</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-circle">
+              <i class="fa-solid fa-train-subway"></i>
+            </div>
+            <p>교통편</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-circle">
+              <i class="fa-solid fa-golf-ball-tee"></i>
+            </div>
+            <p>골프</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-circle"><i class="fa-solid fa-percent"></i></div>
+            <p>초특가 할인</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="icon-circle">
+              <i class="fa-solid fa-file-shield"></i>
+            </div>
+            <p>여행자 보험</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 5. 띠 배너 -->
+    <section class="container promo-banner section-gap">
+      <!-- 띠 배너 이미지 대체 -->
+      <img
+        src="https://placehold.co/1200x150/2c61fe/ffffff?text=SUMMER+SALE+UP+TO+50%25"
+        alt="Promotion"
+      />
+    </section>
+
+    <!-- 6. 렌터카 추천 -->
+    <section class="container section-gap rent-car">
+      <div
+        class="section-header"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h3>렌터카 추천</h3>
+        <div class="tabs">
+          <button class="tab-btn active">제주</button>
+          <button class="tab-btn">서울/경기</button>
+          <button class="tab-btn">부산</button>
+        </div>
+      </div>
+
+      <div class="car-layout">
+        <div class="car-list">
+          <!-- Car 1 -->
+          <div class="car-item">
+            <img
+              src="https://www.kia.com/content/dam/kwp/kr/ko/vehicles/morning/25my/content/morning_gt_line_main_pc.jpg"
+              alt="Car1"
+            />
+            <div class="car-info">
+              <h4>기아 Morning 모닝 동급</h4>
+              <p style="color: #888; font-size: 12px; margin-bottom: 10px">
+                <span class="tag">특가</span> 즉시 확정
+              </p>
+              <div class="price" style="font-size: 16px">24시간 64,330원</div>
+            </div>
+          </div>
+          <!-- Car 2 -->
+          <div class="car-item">
+            <img
+              src="https://www.kia.com/content/dam/kwp/kr/ko/vehicles/ray/25my/content/ray_exterior_a2g_pc.jpg"
+              alt="Car2"
+            />
+            <div class="car-info">
+              <h4>기아 Ray 레이 동급</h4>
+              <p style="color: #888; font-size: 12px; margin-bottom: 10px">
+                <span class="tag">특가</span> 즉시 확정
+              </p>
+              <div class="price" style="font-size: 16px">24시간 70,170원</div>
+            </div>
+          </div>
+          <!-- Car 3 -->
+          <div class="car-item">
+            <img
+              src="https://www.hyundaimotorgroup.com/image/upload/asset_library/MDA00000000000058500/ec176e2df26b42b08c397e20d0a1fa39.jpg"
+              alt="Car3"
+            />
+            <div class="car-info">
+              <h4>현대 Casper 캐스퍼 동급</h4>
+              <p style="color: #888; font-size: 12px; margin-bottom: 10px">
+                <span class="tag">특가</span> 즉시 확정
+              </p>
+              <div class="price" style="font-size: 16px">24시간 74,020원</div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Promo Box -->
+        <div class="car-promo-box">
+          <div class="car-promo-content">
+            <h4>전세계 최저가<br />렌터카 예약</h4>
+            <button class="btn-check">지금 확인하기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-inner">
+        <div class="f-nav">
+          <ul>
+            <li>회사 소개</li>
+            <li>이용약관</li>
+            <li>개인정보처리방침</li>
+            <li>여행약관</li>
+          </ul>
+        </div>
+        <div class="f-info">
+          <p>
+            상호명: (주)트립라이프 | 대표: 홍길동 | 사업자등록번호: 123-45-67890
+          </p>
+          <p>
+            주소: 서울특별시 강남구 테헤란로 123 | 고객센터: 1588-0000 | 메일:
+            help@triplife.com
+          </p>
+          <div class="f-sns">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+        </div>
+        <div class="copyright">&copy; 2024 Trip Life. All Rights Reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html>

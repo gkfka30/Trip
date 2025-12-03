@@ -1,0 +1,710 @@
+/* --- [기본 설정 및 초기화] --- */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; /* 레이아웃 깨짐 방지 */
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- [공통 레이아웃 클래스] --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section-gap {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+/* 섹션 헤더 (제목 영역) */
+.section-header {
+  margin-bottom: 30px;
+}
+.section-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-header h3 i {
+  color: #ff5b5b;
+}
+.section-header p {
+  color: #888;
+  font-size: 14px;
+}
+
+/* --- [모바일 (Mobile) ~719px] --- */
+@media (max-width: 719px) {
+  header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  header nav {
+    display: none; /* 모바일에서 메뉴 숨김 */
+  }
+  header .search {
+    display: none;
+  }
+  header > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  header .hamb {
+    font-size: 24px;
+    color: #333;
+  }
+  header .mainlogo img {
+    height: 30px;
+  }
+
+  /* 모바일 컨텐츠 레이아웃 */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .theme-wrap {
+    flex-direction: column;
+  }
+  .theme-sidebar {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .theme-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  .theme-grid {
+    grid-template-columns: 1fr;
+  }
+  .icon-menu ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .car-layout {
+    flex-direction: column;
+  }
+  .car-list {
+    grid-template-columns: 1fr;
+  }
+  .car-promo-box {
+    display: none;
+  } /* 모바일 공간 부족 시 숨김 */
+}
+
+/* --- [태블릿 (Tablet) 720px ~ 1219px] --- */
+@media (min-width: 720px) and (max-width: 1219px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  header > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  header .hamb {
+    font-size: 24px;
+    color: #333;
+  }
+  header .search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 15px;
+  }
+  header .search p {
+    font-size: 13px;
+    color: #aaa;
+    margin-right: 10px;
+  }
+  header .search a {
+    color: #2c61fe;
+  }
+  header nav ul {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    align-items: center;
+  }
+
+  /* 태블릿 컨텐츠 레이아웃 */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .theme-wrap {
+    gap: 20px;
+  }
+  .theme-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+  }
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .icon-menu ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .car-layout {
+    flex-direction: column;
+  }
+  .car-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .car-promo-box {
+    display: flex;
+    height: 150px;
+    margin-top: 20px;
+  }
+}
+
+/* --- [PC (Desktop) 1220px ~] --- */
+@media (min-width: 1220px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  header > div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  header .hamb {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  header .search {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 8px 20px;
+    width: 300px;
+    justify-content: space-between;
+  }
+  header .search p {
+    color: #aaa;
+    font-size: 14px;
+  }
+  header .search a {
+    color: #2c61fe;
+    font-size: 18px;
+  }
+
+  header nav ul {
+    display: flex;
+    gap: 30px;
+    font-weight: 500;
+  }
+  header nav ul li a:hover {
+    color: #2c61fe;
+  }
+
+  /* PC 컨텐츠 레이아웃 */
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .theme-wrap {
+    gap: 30px;
+    min-height: 400px;
+  }
+  .theme-sidebar {
+    width: 280px;
+    padding: 40px;
+  }
+  .theme-sidebar h3 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .theme-sidebar li {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .theme-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .icon-menu ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 100px;
+  }
+  .icon-menu img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .car-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+  }
+  .car-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .car-promo-box {
+    height: auto;
+  }
+}
+
+/* --- [Visual Section (Main Banner)] --- */
+#visual {
+  /* 이미지 경로가 없으므로 Placehold.co 사용 (실제 개발 시 경로 변경) */
+  background-image: url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  height: 600px; /* PC 기준 */
+  position: relative;
+  color: white;
+}
+#visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* 이미지 어둡게 처리 */
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.btn a {
+  color: white;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.btn a:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.titleBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+}
+.titleBox h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.titleBox p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+.right {
+  position: absolute;
+  bottom: 80px;
+  right: 50px;
+  z-index: 2;
+}
+.right a {
+  color: white;
+  font-size: 18px;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+/* 모바일 비주얼 조정 */
+@media (max-width: 719px) {
+  #visual {
+    height: 400px;
+  }
+  .titleBox h2 {
+    font-size: 32px;
+  }
+  .titleBox p {
+    font-size: 14px;
+  }
+
+  .right {
+    display: none;
+  }
+  .btn {
+    padding: 0 10px;
+  }
+}
+
+/* =========================================
+         [Content Area Styles] 여기서부터 추가된 스타일
+         ========================================= */
+
+/* 1. 휴가 특선 게시 (Cards) */
+.card-grid {
+  display: grid;
+  gap: 20px;
+}
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  background: #fff;
+  border: 1px solid #eee;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.card-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.card:hover .card-img img {
+  transform: scale(1.05);
+}
+.card-body {
+  padding: 20px;
+}
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2c61fe;
+  margin-bottom: 8px;
+}
+.card-body h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+.card-body p {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 20px;
+}
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: right;
+  color: #111;
+}
+
+/* 2. 중간 배너 (Sydney) */
+.banner-mid {
+  background: url("https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=2070&auto=format&fit=crop")
+    no-repeat center/cover;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  margin-bottom: 80px;
+}
+.banner-mid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.banner-text {
+  position: relative;
+  z-index: 10;
+}
+.banner-text h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.banner-text p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* 3. 테마별 여행 */
+.theme-wrap {
+  display: flex;
+}
+.theme-sidebar {
+  background-color: #2c61fe;
+  color: white;
+  border-radius: 15px;
+  padding: 30px;
+}
+.theme-sidebar h3 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+.theme-sidebar ul li {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.theme-sidebar ul li.active,
+.theme-sidebar ul li:hover {
+  opacity: 1;
+  font-weight: 700;
+}
+.theme-grid {
+  display: grid;
+  flex-grow: 1;
+}
+.mini-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.mini-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+.mini-card:hover img {
+  transform: scale(1.1);
+}
+.mini-txt {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: 20px;
+}
+.mini-txt h5 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.mini-txt p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 4. 아이콘 메뉴 */
+.icon-menu {
+  background: #f9f9f9;
+  border-radius: 20px;
+}
+.icon-menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+.icon-menu a {
+  display: block;
+  transition: transform 0.2s;
+}
+.icon-menu a:hover {
+  transform: translateY(-5px);
+}
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-size: 24px;
+  color: #2c61fe;
+}
+.icon-menu p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+}
+
+/* 5. 띠 배너 */
+.promo-banner img {
+  width: 100%;
+  border-radius: 15px;
+  height: auto;
+}
+
+/* 6. 렌터카 추천 */
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+.tab-btn {
+  border: 1px solid #ddd;
+  background: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.tab-btn.active {
+  background: #333;
+  color: white;
+  border-color: #333;
+}
+.car-item {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+.car-item img {
+  width: 80%;
+  margin: 0 auto 15px;
+  transition: 0.3s;
+}
+.car-item:hover img {
+  transform: scale(1.05) rotate(-2deg);
+}
+.car-info h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.tag {
+  background: #eef2ff;
+  color: #2c61fe;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.car-promo-box {
+  background: url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop")
+    center/cover;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  color: white;
+  overflow: hidden;
+}
+.car-promo-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.car-promo-content {
+  position: relative;
+  z-index: 2;
+}
+.car-promo-box h4 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+.btn-check {
+  background: #2c61fe;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Footer */
+footer {
+  background: #f8f9fa;
+  padding: 50px 0;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+  color: #666;
+}
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.f-nav ul {
+  display: flex;
+  gap: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+.f-info p {
+  margin-bottom: 5px;
+}
+.f-sns {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.f-sns i {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.f-sns i:hover {
+  color: #2c61fe;
+}
