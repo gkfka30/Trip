@@ -500,6 +500,7 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size:14px
 }
 .theme-sidebar ul li.active,
 .theme-sidebar ul li:hover {
